@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8e9e4">
+<title>Happy Birthday, Shrishti ♡</title>
+<style>
+:root{--ink:#442c32;--rose:#b75e70;--cream:#fff8f4;--line:#efd7d7}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at top,#f6d9d8 0,#fff8f4 42%,#f8eee7 100%);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+.wrap{width:min(720px,100%);margin:auto;padding:28px 17px 50px}
+.hero{text-align:center;padding:32px 15px 24px}
+.kicker{font:11px Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:#a96a76}
+h1{font-size:clamp(42px,12vw,76px);font-weight:normal;line-height:.98;margin:16px 0 14px}
+h1 em{color:var(--rose);font-weight:normal}
+.sub{font:14px/1.7 Arial,sans-serif;color:#795c61;max-width:440px;margin:0 auto}
+.heart{font-size:22px;color:#c77786;margin:15px 0}
+.btn{border:0;border-radius:999px;background:#9f5367;color:white;padding:13px 21px;font:13px Arial,sans-serif;letter-spacing:.3px;cursor:pointer;box-shadow:0 7px 18px #9f53672b;margin:7px 4px}
+.btn.secondary{background:#fff9f6;color:#8b4c5d;border:1px solid #e8c6cb;box-shadow:none}
+.section{margin:28px 0 0}
+.section-title{text-align:center;font-size:27px;font-weight:normal;margin:0 0 8px}
+.section-note{text-align:center;font:12px/1.6 Arial,sans-serif;color:#8a6a70;margin:0 0 18px}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.photo{margin:0;background:#fff;padding:7px 7px 13px;box-shadow:0 7px 22px #6d3c3c13;border:1px solid #f1dfdc;transform:rotate(-1deg)}
+.photo:nth-child(2){transform:rotate(1.3deg);margin-top:14px}
+.photo:nth-child(3){grid-column:1 / -1;width:76%;justify-self:center;transform:rotate(-.5deg)}
+.photo img{width:100%;height:auto;display:block;max-height:420px;object-fit:cover}
+.photo figcaption{text-align:center;font:italic 13px Georgia,serif;color:#9d6974;padding-top:9px}
+.reveal-card{background:#fffaf7;border:1px solid var(--line);border-radius:18px;padding:22px 17px;text-align:center;box-shadow:0 10px 30px #7a42420d}
+#surprise{display:none;font-size:19px;line-height:1.7;padding:8px 2px}
+#surprise.show{display:block;animation:fade .7s ease}
+.footer{text-align:center;font:11px Arial,sans-serif;letter-spacing:1px;color:#a17c80;margin-top:34px}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:560px){.gallery{grid-template-columns:1fr 1fr 1fr}.photo:nth-child(3){grid-column:auto;width:auto;margin-top:0}.photo img{max-height:390px;object-fit:cover}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <div class="kicker">a little page, just for you</div>
+    <h1>Happy Birthday,<br><em>Shrishti</em> ♡</h1>
+    <p class="sub">A tiny collection of lovely moments, wrapped in a little birthday magic. Today deserves a page of its own.</p>
+    <div class="heart">✧　♡　✧</div>
+    <button class="btn" onclick="document.getElementById('memories').scrollIntoView({behavior:'smooth'})">Open your memories ↓</button>
+    <button class="btn secondary" onclick="showSurprise()">A little surprise ✨</button>
+  </header>
+
+  <section class="section" id="memories">
+    <h2 class="section-title">Little moments, lovely you</h2>
+    <p class="section-note">Three snapshots, one very special birthday.</p>
+    <div class="gallery">
+      <figure class="photo"><img src="photos/photo1.jpg" alt="Shrishti in a mint green outfit" loading="lazy"><figcaption>soft little moments ♡</figcaption></figure>
+      <figure class="photo"><img src="photos/photo2.jpg" alt="Shrishti in a bright pink outfit" loading="lazy"><figcaption>your kind of magic ✧</figcaption></figure>
+      <figure class="photo"><img src="photos/photo3.jpg" alt="A lovely close-up memory of Shrishti" loading="lazy"><figcaption>simply unforgettable</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="reveal-card">
+      <h2 class="section-title">One more thing…</h2>
+      <p class="section-note">Tap below when you're ready 💌</p>
+      <button class="btn" id="revealBtn" onclick="showSurprise()">Reveal your birthday note</button>
+      <div id="surprise">Dear Shrishti,<br><br>May this new chapter bring you peaceful days, unexpected happiness, big little wins, and countless reasons to smile. Keep being your own kind of wonderful.<br><br>Wishing you a birthday as lovely as the memories you make. ♡<br><br><em>With warm wishes, always ✨</em></div>
+    </div>
+  </section>
+  <div class="footer">MADE WITH ♡ JUST FOR SHRISHTI</div>
+</main>
+<script>
+function showSurprise(){
+  const note=document.getElementById('surprise');
+  note.classList.add('show');
+  document.getElementById('revealBtn').textContent='Your little note is open ♡';
+  note.scrollIntoView({behavior:'smooth',block:'center'});
+}
+</script>
+</body>
+</html>
